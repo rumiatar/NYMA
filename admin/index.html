@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin - Prayer Times Widget</title>
-  <link rel="stylesheet" href="https://unpkg.com/@staticcms/app@^3.0.0/dist/main.css" />
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css" />
+  <link rel="stylesheet" href="../css/styles.css"> <!-- Ensure correct path -->
   <style>
-    /* Your custom styles here */
-    .cms-app {
+    /* Additional styling specific to admin page */
+    .nc-app {
       max-width: 800px;
       margin: 50px auto;
       padding: 20px;
@@ -19,17 +18,14 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     
-    .cms-header {
+    .nc-header {
       text-align: center;
       color: #0E1827;
     }
   </style>
 </head>
 <body>
-  <script src="https://unpkg.com/@staticcms/app@^3.0.0/dist/static-cms-app.js"></script>
-  <script>
-    window.CMS.init();
-  </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script><script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Include the Netlify CMS script -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
