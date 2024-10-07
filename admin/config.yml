@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (replace with your branch if different)
+
+media_folder: "assets/images" # Folder where media files will be stored
+public_folder: "/assets/images" # Public URL for media files
+
+collections:
+  - name: "iqamaTimes"
+    label: "Iqama Times"
+    files:
+      - file: "data/iqamaTimes.json"
+        label: "Iqama Times"
+        name: "iqamaTimes"
+        fields:
+          - { label: "Fajr Iqama Time", name: "fajr", widget: "time" }
+          - { label: "Dhuhr Iqama Time", name: "dhuhr", widget: "time" }
+          - { label: "Asr Iqama Time", name: "asr", widget: "time" }
+          - { label: "Maghrib Iqama Time", name: "maghrib", widget: "time" }
+          - { label: "Isha Iqama Time", name: "isha", widget: "time" }
+          - { label: "Jummah Iqama Time", name: "jummah", widget: "time" }
+          - { label: "Second Jummah Iqama Time", name: "secondJummah", widget: "time" }

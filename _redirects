@@ -1,0 +1,5 @@
+# Redirect all requests to /admin/* to admin/index.html with a 200 status
+/admin/*    /admin/index.html   200
+
+# Optionally, enforce authentication on the admin routes
+# Note: Basic authentication can be implemented using Netlify's header rules or via Git Gateway permissions

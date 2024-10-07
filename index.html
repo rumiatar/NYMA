@@ -1,286 +1,87 @@
-<!-- Prayer Times Widget -->
-<div id="prayer-times">
-  <!-- Standard Prayers -->
-  <div class="prayer-time" id="fajr">
-    <div class="prayer-name">Fajr</div>
-    <div class="adhan-time">
-      <span class="label">Adhan:</span> <span id="fajr-adhan"></span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prayer Times Widget</title>
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Prayer Times Widget HTML -->
+  <div id="prayer-times">
+    <!-- Fajr -->
+    <div class="prayer-time" id="fajr">
+      <div class="prayer-name">Fajr</div>
+      <div class="adhan-time">
+        <span class="label">Adhan:</span> <span id="fajr-adhan"></span>
+      </div>
+      <div class="iqama-time">
+        <span class="label">Iqama:</span> <span id="fajr-iqama"></span>
+      </div>
     </div>
-    <div class="iqama-time">
-      <span class="label">Iqama:</span> <span id="fajr-iqama"></span>
-    </div>
-  </div>
-  
-  <!-- Removed Sunrise Prayer -->
-  
-  <div class="prayer-time" id="dhuhr">
-    <div class="prayer-name">Dhuhr</div>
-    <div class="adhan-time">
-      <span class="label">Adhan:</span> <span id="dhuhr-adhan"></span>
-    </div>
-    <div class="iqama-time">
-      <span class="label">Iqama:</span> <span id="dhuhr-iqama"></span>
-    </div>
-  </div>
-  
-  <div class="prayer-time" id="asr">
-    <div class="prayer-name">Asr</div>
-    <div class="adhan-time">
-      <span class="label">Adhan:</span> <span id="asr-adhan"></span>
-    </div>
-    <div class="iqama-time">
-      <span class="label">Iqama:</span> <span id="asr-iqama"></span>
-    </div>
-  </div>
-  
-  <div class="prayer-time" id="maghrib">
-    <div class="prayer-name">Maghrib</div>
-    <div class="adhan-time">
-      <span class="label">Adhan:</span> <span id="maghrib-adhan"></span>
-    </div>
-    <div class="iqama-time">
-      <span class="label">Iqama:</span> <span id="maghrib-iqama"></span>
-    </div>
-  </div>
-  
-  <div class="prayer-time" id="isha">
-    <div class="prayer-name">Isha</div>
-    <div class="adhan-time">
-      <span class="label">Adhan:</span> <span id="isha-adhan"></span>
-    </div>
-    <div class="iqama-time">
-      <span class="label">Iqama:</span> <span id="isha-iqama"></span>
-    </div>
-  </div>
-  
-  <!-- Manual Friday Prayers -->
-  <div class="prayer-time" id="jummah">
-    <div class="prayer-name">Jummah</div>
-    <!-- Removed Adhan Time -->
-    <div class="iqama-time no-label" id="jummah-iqama">13:15</div>
-  </div>
-  
-  <div class="prayer-time" id="second-jummah">
-    <div class="prayer-name">Second Jummah</div>
-    <!-- Removed Adhan Time -->
-    <div class="iqama-time no-label" id="second-jummah-iqama">14:15</div>
-  </div>
-</div>
-
-<!-- Optional: Update Iqama Times Button -->
-<button id="update-iqama">Update Iqama Times</button>
-
-
-/* Prayer Times Widget Styling */
-#prayer-times {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: stretch;
-  padding: 20px;
-  background-color: #FBFBFF; /* Widget background color */
-  border: 1px solid #0E1827; /* Deep text color as border */
-  box-sizing: border-box;
-  width: 100%;
-}
-
-/* Individual Prayer Time Styling */
-.prayer-time {
-  flex: 1 1 150px; /* Flex-grow, flex-shrink, flex-basis */
-  margin: 10px;
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background-color: #FBFBFF; /* Match widget background */
-  border: 1px solid #0E1827; /* Deep text color as border */
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(14, 24, 39, 0.1); /* Subtle shadow */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-/* Prayer Name Styling */
-.prayer-name {
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #0E1827; /* Deep text color */
-  font-size: 18px;
-}
-
-/* Label Styling */
-.label {
-  font-weight: bold;
-  color: #0E1827; /* Deep text color */
-}
-
-/* Adhan and Iqama Time Styling */
-.adhan-time, .iqama-time {
-  font-size: 16px;
-  margin: 5px 0;
-}
-
-/* Highlight Iqama Times */
-.iqama-time {
-  color: #0E1827; /* Deep text color */
-  font-size: 18px; /* Slightly larger font for emphasis */
-}
-
-.iqama-time.no-label {
-  /* Styling for Jummah Iqama times without labels */
-  font-weight: bold;
-  color: #0E1827; /* Text color over highlight */
-  background-color: #FFC15E; /* Solid highlight color */
-  border-radius: 4px;
-  padding: 5px 0;
-}
-
-.iqama-time:not(.no-label) span {
-  background-color: #FFC15E; /* Highlight color */
-  padding: 3px 6px;
-  border-radius: 4px;
-  color: #0E1827; /* Text color over highlight */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 800px) {
-  .prayer-time {
-    flex: 1 1 120px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 500px) {
-  .prayer-time {
-    flex: 1 1 100px;
-    font-size: 12px;
-  }
-}
-
-/* Optional: Hover Effects for Interactivity */
-.prayer-time:hover {
-  box-shadow: 0 6px 12px rgba(14, 24, 39, 0.15);
-  transform: translateY(-2px);
-  transition: all 0.3s ease;
-}
-
-/* Update Iqama Times Button Styling */
-#update-iqama {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #FFC15E; /* Match highlight color */
-  color: #0E1827; /* Deep text color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-#update-iqama:hover {
-  background-color: #e6b750; /* Slightly darker on hover */
-}
-
-// === PrayTimes.js code starts here ===
-// Paste the entire content of PrayTimes.js here
-// === PrayTimes.js code ends here ===
-
-// Initialize PrayTimes with desired calculation method (e.g., 'MWL')
-var prayTimes = new PrayTimes('MWL');
-
-// Optional: Adjust calculation parameters if needed
-// Example: prayTimes.adjust({ fajr: 16, isha: 15 });
-
-// Set your location coordinates and timezone
-var latitude = 43;      // Replace with your latitude
-var longitude = -80;    // Replace with your longitude
-var timezone = -5;      // Replace with your timezone offset from GMT
-
-// Define Iqama Times (Manual Entries)
-var iqamaTimes = {
-  fajr: '05:15',
-  dhuhr: '12:30',
-  asr: '16:00',
-  maghrib: '18:15',
-  isha: '20:00'
-};
-
-// Function to update prayer times
-function updatePrayerTimes() {
-  var today = new Date();
-  
-  // Calculate prayer times
-  var adhanTimes = prayTimes.getTimes(today, [latitude, longitude], timezone);
-  
-  // **Set Offsets**
-  // Adjust prayer times by setting offsets in minutes
-  prayTimes.tune({
-    fajr: 5,        // Fajr time will be 5 minutes later
-    dhuhr: 0,       // No adjustment for Dhuhr
-    asr: 0,         // No adjustment for Asr
-    maghrib: 3,     // Maghrib time will be 3 minutes later
-    isha: -2        // Isha time will be 2 minutes earlier
-  });
-  
-  // Recalculate prayer times after tuning
-  var tunedTimes = prayTimes.getTimes(today, [latitude, longitude], timezone);
-  
-  // Display the tuned Adhan times in HTML
-  document.getElementById('fajr-adhan').innerHTML = tunedTimes.fajr;
-  document.getElementById('dhuhr-adhan').innerHTML = tunedTimes.dhuhr;
-  document.getElementById('asr-adhan').innerHTML = tunedTimes.asr;
-  document.getElementById('maghrib-adhan').innerHTML = tunedTimes.maghrib;
-  document.getElementById('isha-adhan').innerHTML = tunedTimes.isha;
-  
-  // Display the Iqama times from the iqamaTimes object
-  document.getElementById('fajr-iqama').innerHTML = iqamaTimes.fajr;
-  document.getElementById('dhuhr-iqama').innerHTML = iqamaTimes.dhuhr;
-  document.getElementById('asr-iqama').innerHTML = iqamaTimes.asr;
-  document.getElementById('maghrib-iqama').innerHTML = iqamaTimes.maghrib;
-  document.getElementById('isha-iqama').innerHTML = iqamaTimes.isha;
-  
-  // **Manual Friday Prayer Times**
-  var day = today.getDay(); // 5 represents Friday
-  if (day === 5) { // 0 = Sunday, 1 = Monday, ..., 5 = Friday
-    // Jummah Prayer Iqama
-    document.getElementById('jummah-iqama').innerHTML = '13:15';       // Set Jummah Iqama time
     
-    // Second Jummah Prayer Iqama
-    document.getElementById('second-jummah-iqama').innerHTML = '14:15'; // Set Second Jummah Iqama time
-  } else {
-    // Hide or set to '-' for Jummah prayers
-    document.getElementById('jummah-iqama').innerHTML = '-';
-    document.getElementById('second-jummah-iqama').innerHTML = '-';
-  }
-}
-
-// Initial call to display prayer times
-updatePrayerTimes();
-
-// **Automatic Daily Updates**
-// Calculate the time until midnight
-var now = new Date();
-var millisTillMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate()+1, 0,0,0,0) - now;
-
-// Set a timeout to update at midnight
-setTimeout(function(){
-  updatePrayerTimes();
-  // Then set an interval to update every 24 hours
-  setInterval(updatePrayerTimes, 24*60*60*1000);
-}, millisTillMidnight);
-
-/* Optional: Update Iqama Times via Button */
-document.getElementById('update-iqama').addEventListener('click', function() {
-  var prayers = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
-  prayers.forEach(function(prayer) {
-    var newIqama = prompt('Enter Iqama time for ' + capitalize(prayer) + ' (e.g., 05:15):', iqamaTimes[prayer]);
-    if(newIqama !== null && /^\d{2}:\d{2}$/.test(newIqama)) {
-      iqamaTimes[prayer] = newIqama;
-    }
-  });
-  updatePrayerTimes();
-});
-
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+    <!-- Dhuhr -->
+    <div class="prayer-time" id="dhuhr">
+      <div class="prayer-name">Dhuhr</div>
+      <div class="adhan-time">
+        <span class="label">Adhan:</span> <span id="dhuhr-adhan"></span>
+      </div>
+      <div class="iqama-time">
+        <span class="label">Iqama:</span> <span id="dhuhr-iqama"></span>
+      </div>
+    </div>
+    
+    <!-- Asr -->
+    <div class="prayer-time" id="asr">
+      <div class="prayer-name">Asr</div>
+      <div class="adhan-time">
+        <span class="label">Adhan:</span> <span id="asr-adhan"></span>
+      </div>
+      <div class="iqama-time">
+        <span class="label">Iqama:</span> <span id="asr-iqama"></span>
+      </div>
+    </div>
+    
+    <!-- Maghrib -->
+    <div class="prayer-time" id="maghrib">
+      <div class="prayer-name">Maghrib</div>
+      <div class="adhan-time">
+        <span class="label">Adhan:</span> <span id="maghrib-adhan"></span>
+      </div>
+      <div class="iqama-time">
+        <span class="label">Iqama:</span> <span id="maghrib-iqama"></span>
+      </div>
+    </div>
+    
+    <!-- Isha -->
+    <div class="prayer-time" id="isha">
+      <div class="prayer-name">Isha</div>
+      <div class="adhan-time">
+        <span class="label">Adhan:</span> <span id="isha-adhan"></span>
+      </div>
+      <div class="iqama-time">
+        <span class="label">Iqama:</span> <span id="isha-iqama"></span>
+      </div>
+    </div>
+    
+    <!-- Jummah -->
+    <div class="prayer-time" id="jummah">
+      <div class="prayer-name">Jummah</div>
+      <!-- Removed Adhan Time -->
+      <div class="iqama-time no-label" id="jummah-iqama">13:15</div>
+    </div>
+    
+    <!-- Second Jummah -->
+    <div class="prayer-time" id="second-jummah">
+      <div class="prayer-name">Second Jummah</div>
+      <!-- Removed Adhan Time -->
+      <div class="iqama-time no-label" id="second-jummah-iqama">14:15</div>
+    </div>
+  </div>
+  
+  
+  <!-- JavaScript Files -->
+  <script src="js/PrayTimes.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
