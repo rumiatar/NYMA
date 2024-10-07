@@ -9,7 +9,7 @@ collections:
   - name: "iqamaTimes"
     label: "Iqama Times"
     files:
-      - file: "data/iqamaTimes.json"
+      - file: "../data/iqamaTimes.json"
         label: "Iqama Times"
         name: "iqamaTimes"
         fields:
