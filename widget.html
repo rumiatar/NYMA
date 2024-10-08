@@ -8,82 +8,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensure responsiveness -->
 </head>
 <body>
-  <!-- Prayer Times Widget HTML -->
+  <!-- Prayer Times Widget -->
   <div id="prayer-times">
-    <!-- Fajr -->
-    <div class="prayer-time" id="fajr">
-      <div class="prayer-name">Fajr</div>
-      <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="fajr-adhan">--:--</span>
-      </div>
-      <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="fajr-iqama">--:--</span>
-      </div>
-    </div>
-    
-    <!-- Dhuhr -->
-    <div class="prayer-time" id="dhuhr">
-      <div class="prayer-name">Dhuhr</div>
-      <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="dhuhr-adhan">--:--</span>
-      </div>
-      <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="dhuhr-iqama">--:--</span>
-      </div>
-    </div>
-    
-    <!-- Asr -->
-    <div class="prayer-time" id="asr">
-      <div class="prayer-name">Asr</div>
-      <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="asr-adhan">--:--</span>
-      </div>
-      <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="asr-iqama">--:--</span>
-      </div>
-    </div>
-    
-    <!-- Maghrib -->
-    <div class="prayer-time" id="maghrib">
-      <div class="prayer-name">Maghrib</div>
-      <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="maghrib-adhan">--:--</span>
-      </div>
-      <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="maghrib-iqama">--:--</span>
-      </div>
-    </div>
-    
-    <!-- Isha -->
-    <div class="prayer-time" id="isha">
-      <div class="prayer-name">Isha</div>
-      <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="isha-adhan">--:--</span>
-      </div>
-      <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="isha-iqama">--:--</span>
-      </div>
-    </div>
-    
-    <!-- Jummah -->
-    <div class="prayer-time" id="jummah">
-      <div class="prayer-name">Jummah</div>
-      <!-- Removed "Iqama" Label -->
-      <div class="iqama-time no-label">
-        <div class="jummah-times">
-          <span class="subheading">1st</span>: <span id="jummah-iqama-1">--:--</span>
-        </div>
-        <div class="jummah-times">
-          <span class="subheading">2nd</span>: <span id="jummah-iqama-2">--:--</span>
-        </div>
-      </div>
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Prayer</th>
+          <th>Adhan</th>
+          <th>Iqama</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Fajr -->
+        <tr>
+          <td>Fajr</td>
+          <td id="fajr-adhan">--:--</td>
+          <td id="fajr-iqama">--:--</td>
+        </tr>
+        <!-- Dhuhr -->
+        <tr>
+          <td>Dhuhr</td>
+          <td id="dhuhr-adhan">--:--</td>
+          <td id="dhuhr-iqama">--:--</td>
+        </tr>
+        <!-- Asr -->
+        <tr>
+          <td>Asr</td>
+          <td id="asr-adhan">--:--</td>
+          <td id="asr-iqama">--:--</td>
+        </tr>
+        <!-- Maghrib -->
+        <tr>
+          <td>Maghrib</td>
+          <td id="maghrib-adhan">--:--</td>
+          <td id="maghrib-iqama">--:--</td>
+        </tr>
+        <!-- Isha -->
+        <tr>
+          <td>Isha</td>
+          <td id="isha-adhan">--:--</td>
+          <td id="isha-iqama">--:--</td>
+        </tr>
+        <!-- Jummah -->
+        <tr>
+          <td>Jummah 1st</td>
+          <td>-</td>
+          <td id="jummah-iqama-1">--:--</td>
+        </tr>
+        <tr>
+          <td>Jummah 2nd</td>
+          <td>-</td>
+          <td id="jummah-iqama-2">--:--</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  
+
   <!-- JavaScript Files -->
   <script src="js/PrayTimes.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
+
 
 
