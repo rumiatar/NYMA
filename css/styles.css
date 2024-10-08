@@ -1,4 +1,4 @@
-/* Modernized Prayer Times Widget Styling */
+/* Modernized Prayer Times Widget Styling */ 
 #prayer-times {
   display: flex;
   flex-wrap: wrap;
@@ -58,19 +58,20 @@
 }
 
 .iqama-time.no-label {
-  /* Styling for Jummah Iqama times without labels */
+  /* Removed orange highlights */
   font-weight: 600;
-  color: #FFFFFF; /* White text */
-  background-color: #FFC15E; /* Solid highlight color */
-  border-radius: 5px;
-  padding: 10px 0;
+  color: #0E1827; /* Changed from white to deep text color */
+  background-color: transparent; /* Removed background color */
+  border: none; /* Removed border */
+  padding: 0;
 }
 
 .iqama-time:not(.no-label) span {
-  background: linear-gradient(45deg, #FFC15E, #FFB347); /* Gradient background */
+  /* Removed gradient background */
+  background: none;
   padding: 5px 10px;
   border-radius: 5px;
-  color: #0E1827; /* Text color over gradient */
+  color: #0E1827; /* Text color remains unchanged */
   font-weight: 500;
 }
 
@@ -136,4 +137,5 @@
   border: none;
   border-radius: 10px;
 }
+
 

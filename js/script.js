@@ -2,9 +2,9 @@
 var prayTimes = new PrayTimes('ISNA');
 
 // Set your location coordinates and timezone
-var latitude = 43;      // Replace with your latitude
-var longitude = -80;    // Replace with your longitude
-var timezone = -5;      // Replace with your timezone offset from GMT
+var latitude = 43.76;      // Replace with your latitude
+var longitude = -79.41;    // Replace with your longitude
+var timezone = -4;      // Replace with your timezone offset from GMT
 
 // Debugging: Confirm script is running
 console.log('script.js is running.');
@@ -86,11 +86,11 @@ async function updatePrayerTimes() {
     console.log('Isha Iqama Time set to:', iqamaTimes.isha || '-');
     
     // **Always Display Jummah Iqama Times**
-    document.getElementById('jummah-iqama').innerHTML = iqamaTimes.jummah || '-';
-    console.log('Jummah Iqama Time set to:', iqamaTimes.jummah || '-');
+    document.getElementById('jummah-iqama-1').innerHTML = iqamaTimes.jummah || '-';
+    console.log('Jummah Iqama Time 1 set to:', iqamaTimes.jummah || '-');
     
-    document.getElementById('second-jummah-iqama').innerHTML = iqamaTimes.secondJummah || '-';
-    console.log('Second Jummah Iqama Time set to:', iqamaTimes.secondJummah || '-');
+    document.getElementById('jummah-iqama-2').innerHTML = iqamaTimes.secondJummah || '-';
+    console.log('Jummah Iqama Time 2 set to:', iqamaTimes.secondJummah || '-');
     
     console.log('Prayer Times Updated on Website.');
   } else {
@@ -112,4 +112,5 @@ setTimeout(function(){
   // Then set an interval to update every 24 hours
   setInterval(updatePrayerTimes, 24*60*60*1000);
 }, millisTillMidnight);
+);
 

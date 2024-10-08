@@ -13,10 +13,10 @@
     <div class="prayer-time" id="fajr">
       <div class="prayer-name">Fajr</div>
       <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="fajr-adhan"></span>
+        <span class="label">Adhan:</span> <span id="fajr-adhan">05:15</span>
       </div>
       <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="fajr-iqama">-</span>
+        <span class="label">Iqama:</span> <span id="fajr-iqama">05:20</span>
       </div>
     </div>
     
@@ -24,10 +24,10 @@
     <div class="prayer-time" id="dhuhr">
       <div class="prayer-name">Dhuhr</div>
       <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="dhuhr-adhan"></span>
+        <span class="label">Adhan:</span> <span id="dhuhr-adhan">12:30</span>
       </div>
       <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="dhuhr-iqama">-</span>
+        <span class="label">Iqama:</span> <span id="dhuhr-iqama">12:35</span>
       </div>
     </div>
     
@@ -35,10 +35,10 @@
     <div class="prayer-time" id="asr">
       <div class="prayer-name">Asr</div>
       <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="asr-adhan"></span>
+        <span class="label">Adhan:</span> <span id="asr-adhan">16:00</span>
       </div>
       <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="asr-iqama">-</span>
+        <span class="label">Iqama:</span> <span id="asr-iqama">16:05</span>
       </div>
     </div>
     
@@ -46,10 +46,10 @@
     <div class="prayer-time" id="maghrib">
       <div class="prayer-name">Maghrib</div>
       <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="maghrib-adhan"></span>
+        <span class="label">Adhan:</span> <span id="maghrib-adhan">18:15</span>
       </div>
       <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="maghrib-iqama">-</span>
+        <span class="label">Iqama:</span> <span id="maghrib-iqama">18:20</span>
       </div>
     </div>
     
@@ -57,30 +57,37 @@
     <div class="prayer-time" id="isha">
       <div class="prayer-name">Isha</div>
       <div class="adhan-time">
-        <span class="label">Adhan:</span> <span id="isha-adhan"></span>
+        <span class="label">Adhan:</span> <span id="isha-adhan">20:00</span>
       </div>
       <div class="iqama-time">
-        <span class="label">Iqama:</span> <span id="isha-iqama">-</span>
+        <span class="label">Iqama:</span> <span id="isha-iqama">19:58</span>
       </div>
     </div>
     
     <!-- Jummah -->
     <div class="prayer-time" id="jummah">
       <div class="prayer-name">Jummah</div>
-      <!-- Removed Adhan Time -->
+      <!-- Removed "Iqama" Label -->
       <div class="iqama-time no-label">
-        <span class="label">Iqama:</span> <span id="jummah-iqama">-</span>
+        <div class="jummah-times">
+          <span class="subheading">1st</span>: <span id="jummah-iqama-1">13:15</span>
+        </div>
+        <div class="jummah-times">
+          <span class="subheading">2nd</span>: <span id="jummah-iqama-2">14:15</span>
+        </div>
       </div>
     </div>
     
-    <!-- Second Jummah -->
+    <!-- Second Jummah (Optional) -->
+    <!-- If you only need two Jummah times, you can remove this section -->
+    <!--
     <div class="prayer-time" id="second-jummah">
       <div class="prayer-name">Second Jummah</div>
-      <!-- Removed Adhan Time -->
       <div class="iqama-time no-label">
-        <span class="label">Iqama:</span> <span id="second-jummah-iqama">-</span>
+        <span class="subheading">2nd</span>: <span id="second-jummah-iqama">14:15</span>
       </div>
     </div>
+    -->
   </div>
   
   <!-- JavaScript Files -->
@@ -97,4 +104,5 @@
   </script>
 </body>
 </html>
+
 
