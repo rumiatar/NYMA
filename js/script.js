@@ -44,26 +44,27 @@ async function updatePrayerTimes() {
   // Fetch Iqama Times from JSON
   const iqamaTimes = await fetchIqamaTimes();
   
-if (iqamaTimes) {
-  // Display Adhan times
-  document.getElementById('fajr-adhan').innerHTML = tunedTimes.fajr;
-  document.getElementById('dhuhr-adhan').innerHTML = tunedTimes.dhuhr;
-  document.getElementById('asr-adhan').innerHTML = tunedTimes.asr;
-  document.getElementById('maghrib-adhan').innerHTML = tunedTimes.maghrib;
-  document.getElementById('isha-adhan').innerHTML = tunedTimes.isha;
-
-  // Display Iqama times
-  document.getElementById('fajr-iqama').innerHTML = iqamaTimes.fajr;
-  document.getElementById('dhuhr-iqama').innerHTML = iqamaTimes.dhuhr;
-  document.getElementById('asr-iqama').innerHTML = iqamaTimes.asr;
-  document.getElementById('maghrib-iqama').innerHTML = iqamaTimes.maghrib;
-  document.getElementById('isha-iqama').innerHTML = iqamaTimes.isha;
-
-  // **Set Jummah Iqama Times Without Day Check**
-  document.getElementById('jummah-iqama').innerHTML = iqamaTimes.jummah || '-';
-  document.getElementById('second-jummah-iqama').innerHTML = iqamaTimes.secondJummah || '-';
-} else {
-  console.error('Iqama Times could not be loaded.');
+  if (iqamaTimes) {
+    // Display the tuned Adhan times in HTML
+    document.getElementById('fajr-adhan').innerHTML = tunedTimes.fajr;
+    document.getElementById('dhuhr-adhan').innerHTML = tunedTimes.dhuhr;
+    document.getElementById('asr-adhan').innerHTML = tunedTimes.asr;
+    document.getElementById('maghrib-adhan').innerHTML = tunedTimes.maghrib;
+    document.getElementById('isha-adhan').innerHTML = tunedTimes.isha;
+    
+    // Display the Iqama times from the iqamaTimes object
+    document.getElementById('fajr-iqama').innerHTML = iqamaTimes.fajr || '-';
+    document.getElementById('dhuhr-iqama').innerHTML = iqamaTimes.dhuhr || '-';
+    document.getElementById('asr-iqama').innerHTML = iqamaTimes.asr || '-';
+    document.getElementById('maghrib-iqama').innerHTML = iqamaTimes.maghrib || '-';
+    document.getElementById('isha-iqama').innerHTML = iqamaTimes.isha || '-';
+    
+    // **Always Display Jummah Iqama Times**
+    document.getElementById('jummah-iqama').innerHTML = iqamaTimes.jummah || '-';
+    document.getElementById('second-jummah-iqama').innerHTML = iqamaTimes.secondJummah || '-';
+  } else {
+    console.error('Iqama Times could not be loaded.');
+  }
 }
 
 // Initial call to display prayer times
