@@ -77,51 +77,137 @@
 
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
+/* Modernized Prayer Times Widget Styling */ 
+#prayer-times {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Changed from center to space-around for better spacing */
+  align-items: stretch;
+  padding: 20px; /* Reduced padding to decrease overall height */
+  background-color: #FBFBFF; /* Light background */
+  border-radius: 10px; /* Rounded corners for the widget container */
+  box-shadow: 0 8px 16px rgba(14, 24, 39, 0.1); /* Enhanced shadow */
+  max-width: 100%; /* Changed from 1200px to 100% for full-width */
+  margin: 0 auto; /* Center the widget on the page */
+}
+
+/* Individual Prayer Time Styling */
+.prayer-time {
+  flex: 1 1 150px; /* Reduced base size from 200px to 150px */
+  margin: 10px; /* Reduced margin to allow more boxes in a row */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  background-color: #FFFFFF; /* White background for contrast */
+  border-radius: 10px;
+  padding: 15px; /* Reduced padding to make boxes smaller */
+  box-shadow: 0 4px 8px rgba(14, 24, 39, 0.05); /* Subtle shadow */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 120px; /* Ensures boxes don't get too small */
+}
+
+/* Prayer Name Styling */
+.prayer-name {
+  font-weight: 600; /* Semi-bold */
+  margin-bottom: 10px; /* Reduced margin for tighter spacing */
+  color: #0E1827; /* Deep text color */
+  font-size: 18px; /* Reduced font size from 20px to 18px */
+  text-transform: uppercase; /* Uppercase for emphasis */
+  letter-spacing: 1px; /* Spacing between letters */
+}
+
+/* Label Styling */
+.label {
+  font-weight: 500; /* Medium weight */
+  color: #0E1827; /* Deep text color */
+  font-size: 14px; /* Reduced font size from 16px to 14px */
+}
+
+/* Adhan and Iqama Time Styling */
+.adhan-time, .iqama-time {
+  font-size: 16px; /* Reduced font size from 18px to 16px */
+  margin: 5px 0; /* Reduced margin for tighter spacing */
+}
+
+/* Highlight Iqama Times */
+.iqama-time {
+  color: #0E1827; /* Deep text color */
+  font-size: 18px; /* Reduced font size from 20px to 18px */
+}
+
+.iqama-time.no-label {
+  /* Removed orange highlights */
+  font-weight: 600;
+  color: #0E1827; /* Changed from white to deep text color */
+  background-color: transparent; /* Removed background color */
+  border: none; /* Removed border */
+  padding: 5px 0; /* Added minimal padding */
+}
+
+.iqama-time:not(.no-label) span {
+  /* Removed gradient background */
+  background: none;
+  padding: 3px 8px; /* Reduced padding */
+  border-radius: 5px;
+  color: #0E1827; /* Text color remains unchanged */
+  font-weight: 500;
+}
+
+/* Subheading Styling for Jummah */
+.subheading {
+  font-weight: 600; /* Semi-bold */
+  margin-right: 5px;
+  font-size: 14px; /* Smaller font size */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
   .prayer-time {
-    flex: 1 1 180px;
+    flex: 1 1 140px; /* Further reduced base size */
   }
 }
 
 @media (max-width: 800px) {
   .prayer-time {
-    flex: 1 1 150px;
-    font-size: 14px;
-    padding: 20px;
+    flex: 1 1 130px; /* Further reduced base size */
+    font-size: 12px; /* Further reduced font size */
+    padding: 10px; /* Further reduced padding */
+  }
+  
+  .prayer-name {
+    font-size: 16px; /* Further reduced font size */
+  }
+  
+  .label, .adhan-time, .iqama-time {
+    font-size: 12px; /* Further reduced font size */
   }
 }
 
 @media (max-width: 500px) {
   .prayer-time {
-    flex: 1 1 100%;
-    font-size: 14px;
-    padding: 15px;
+    flex: 1 1 100%; /* Full width on very small screens */
+    font-size: 12px;
+    padding: 10px;
   }
   
   #prayer-times {
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
   }
 }
 
 /* Hover Effects for Interactivity */
 .prayer-time:hover {
   box-shadow: 0 12px 24px rgba(14, 24, 39, 0.15);
-  transform: translateY(-5px);
+  transform: translateY(-3px); /* Reduced translate distance */
 }
-
-/* Admin Page Styling (Already in admin.html) */
 
 /* Responsive Iframe Container */
-.widget-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 .iframe-container {
   position: relative;
   width: 100%;
-  padding-bottom: 75%; /* Adjust the aspect ratio as needed */
+  padding-bottom: 50%; /* Reduced aspect ratio for shorter height */
   height: 0;
   overflow: hidden;
   border-radius: 10px; /* Rounded corners to match widget */
