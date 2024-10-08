@@ -1,5 +1,5 @@
 // Initialize PrayTimes with desired calculation method (e.g., 'ISNA')
-var prayTimes = new PrayTimes('MWL');
+var prayTimes = new PrayTimes('ISNA');
 
 // Set your location coordinates and timezone
 var latitude = 43;      // Replace with your latitude
@@ -44,37 +44,26 @@ async function updatePrayerTimes() {
   // Fetch Iqama Times from JSON
   const iqamaTimes = await fetchIqamaTimes();
   
-  if (iqamaTimes) {
-    // Display the tuned Adhan times in HTML
-    document.getElementById('fajr-adhan').innerHTML = tunedTimes.fajr;
-    document.getElementById('dhuhr-adhan').innerHTML = tunedTimes.dhuhr;
-    document.getElementById('asr-adhan').innerHTML = tunedTimes.asr;
-    document.getElementById('maghrib-adhan').innerHTML = tunedTimes.maghrib;
-    document.getElementById('isha-adhan').innerHTML = tunedTimes.isha;
-    
-    // Display the Iqama times from the iqamaTimes object
-    document.getElementById('fajr-iqama').innerHTML = iqamaTimes.fajr;
-    document.getElementById('dhuhr-iqama').innerHTML = iqamaTimes.dhuhr;
-    document.getElementById('asr-iqama').innerHTML = iqamaTimes.asr;
-    document.getElementById('maghrib-iqama').innerHTML = iqamaTimes.maghrib;
-    document.getElementById('isha-iqama').innerHTML = iqamaTimes.isha;
-    
-    // **Manual Friday Prayer Times**
-    var day = today.getDay(); // 5 represents Friday
-    if (day === 5) { // 0 = Sunday, 1 = Monday, ..., 5 = Friday
-      // Jummah Prayer Iqama
-      document.getElementById('jummah-iqama').innerHTML = iqamaTimes.jummah;       // Set Jummah Iqama time
-      
-      // Second Jummah Prayer Iqama
-      document.getElementById('second-jummah-iqama').innerHTML = iqamaTimes.secondJummah; // Set Second Jummah Iqama time
-    } else {
-      // Hide or set to '-' for Jummah prayers
-      document.getElementById('jummah-iqama').innerHTML = '-';
-      document.getElementById('second-jummah-iqama').innerHTML = '-';
-    }
-  } else {
-    console.error('Iqama Times could not be loaded.');
-  }
+if (iqamaTimes) {
+  // Display Adhan times
+  document.getElementById('fajr-adhan').innerHTML = tunedTimes.fajr;
+  document.getElementById('dhuhr-adhan').innerHTML = tunedTimes.dhuhr;
+  document.getElementById('asr-adhan').innerHTML = tunedTimes.asr;
+  document.getElementById('maghrib-adhan').innerHTML = tunedTimes.maghrib;
+  document.getElementById('isha-adhan').innerHTML = tunedTimes.isha;
+
+  // Display Iqama times
+  document.getElementById('fajr-iqama').innerHTML = iqamaTimes.fajr;
+  document.getElementById('dhuhr-iqama').innerHTML = iqamaTimes.dhuhr;
+  document.getElementById('asr-iqama').innerHTML = iqamaTimes.asr;
+  document.getElementById('maghrib-iqama').innerHTML = iqamaTimes.maghrib;
+  document.getElementById('isha-iqama').innerHTML = iqamaTimes.isha;
+
+  // **Set Jummah Iqama Times Without Day Check**
+  document.getElementById('jummah-iqama').innerHTML = iqamaTimes.jummah || '-';
+  document.getElementById('second-jummah-iqama').innerHTML = iqamaTimes.secondJummah || '-';
+} else {
+  console.error('Iqama Times could not be loaded.');
 }
 
 // Initial call to display prayer times
