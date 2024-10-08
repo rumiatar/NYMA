@@ -1,22 +1,22 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (replace with your branch if different)
+  branch: main # Replace with your repository's default branch if different
 
-media_folder: "assets/images" # Folder where media files will be stored
-public_folder: "/assets/images" # Public URL for media files
+media_folder: "assets/images" # Folder where media files are stored
+public_folder: "/assets/images" # Public URL path for media files
 
 collections:
   - name: "iqamaTimes"
     label: "Iqama Times"
     files:
-      - file: "../data/iqamaTimes.json"
+      - file: "../data/iqamaTimes.json" # Ensure this path is correct
         label: "Iqama Times"
         name: "iqamaTimes"
         fields:
-          - { label: "Fajr Iqama Time", name: "fajr", widget: "time" }
-          - { label: "Dhuhr Iqama Time", name: "dhuhr", widget: "time" }
-          - { label: "Asr Iqama Time", name: "asr", widget: "time" }
-          - { label: "Maghrib Iqama Time", name: "maghrib", widget: "time" }
-          - { label: "Isha Iqama Time", name: "isha", widget: "time" }
-          - { label: "Jummah Iqama Time", name: "jummah", widget: "time" }
-          - { label: "Second Jummah Iqama Time", name: "secondJummah", widget: "time" }
+          - { label: "Fajr Iqama Time", name: "fajr", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Dhuhr Iqama Time", name: "dhuhr", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Asr Iqama Time", name: "asr", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Maghrib Iqama Time", name: "maghrib", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Isha Iqama Time", name: "isha", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Jummah Iqama Time", name: "jummah", widget: "datetime", format: "HH:mm", date_format: false }
+          - { label: "Second Jummah Iqama Time", name: "secondJummah", widget: "datetime", format: "HH:mm", date_format: false }

@@ -83,5 +83,14 @@
   <!-- JavaScript Files -->
   <script src="js/PrayTimes.js"></script>
   <script src="js/script.js"></script>
+<!-- Redirection Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const hash = window.location.hash;
+      if (hash.includes('invite_token=')) {
+        window.location.href = '/admin/' + hash;
+      }
+    });
+  </script>
 </body>
 </html>
