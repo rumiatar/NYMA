@@ -2,17 +2,17 @@
 var prayTimes = new PrayTimes('ISNA');
 
 // Set your location coordinates and timezone
-var latitude = 43.76;      // Replace with your latitude
-var longitude = -79.41;    // Replace with your longitude
+var latitude = 43.79;      // Replace with your latitude
+var longitude = -79.4;    // Replace with your longitude
 var timezone = -4;      // Replace with your timezone offset from GMT
 
 // Debugging: Confirm script is running
 console.log('script.js is running.');
 
-// Function to fetch Iqama Times from JSON file
+// Function to fetch Iqama Times from JSON file with cache busting
 async function fetchIqamaTimes() {
   try {
-    const response = await fetch('/data/iqamaTimes.json');
+    const response = await fetch(`/data/iqamaTimes.json?t=${new Date().getTime()}`); // Cache busting
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }
@@ -112,5 +112,5 @@ setTimeout(function(){
   // Then set an interval to update every 24 hours
   setInterval(updatePrayerTimes, 24*60*60*1000);
 }, millisTillMidnight);
-);
+
 
